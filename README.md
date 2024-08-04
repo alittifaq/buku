@@ -2,7 +2,7 @@
 
 ## CHAPTER 1: PENDAHULUAN
 
-### 1.1 WEBSITE BERBASIS CLOUD
+### 1.1 PENGENALAN WEBSITE BERBASIS CLOUD
 
 Website berbasis cloud itu adalah website yang nyimpen semua data dan programnya di internet alias cloud. Jadi, gak perlu repot-repot nyiapin server sendiri. Cloud computing ini banyak untungnya, misalnya bisa dipakai banyak orang, bisa diakses kapan aja, dan tentunya hemat biaya. Dengan cloud, kita bisa nambahin atau ngurangin kapasitas server sesuai kebutuhan tanpa harus beli hardware tambahan. Fleksibel banget, kan?
 
@@ -56,103 +56,108 @@ Git adalah sistem kontrol versi yang akan membantu Anda mengelola kode sumber pr
 1.. Download Git: kunjungi situs resmi Git https://www.git-scm.com/downloads 2. Pilih versi yang sesuai dengan sistem operasi Anda.
 
 ## CHAPTER 3 CHAPTER 3 DEPLOYMENT DAN HOSTING
-### 3.1	Menyiapkan Akun Cloudflare
+
+### 3.1 Menyiapkan Akun Cloudflare
+
 Langkah-langkah untuk Membuat Akun Cloudflare dan Mengkonfigurasinya KE Website
 
-•	Buka Website Cloudflare: 
+• Buka Website Cloudflare:
 Kunjungi situs Cloudflare di www.cloudflare.com.
-•	Daftar atau Masuk: 
+• Daftar atau Masuk:
 Kalau belum punya akun, klik "Sign Up" dan daftar. Kalau udah punya, klik "Log In" dan masuk.
-•	Tambahkan Website: 
-Setelah masuk, klik "Add a Site". 
-•	Masukkan Domain: 
+• Tambahkan Website:
+Setelah masuk, klik "Add a Site".
+• Masukkan Domain:
 Ketik nama domain website kamu dan klik "Add site".
-•	Pilih Paket: 
+• Pilih Paket:
 Pilih paket yang kamu mau. Paket gratis juga udah oke kok.
-•	Konfigurasi DNS: 
+• Konfigurasi DNS:
 Cloudflare bakal ngecek pengaturan DNS domain kamu. Cek apakah semuanya udah bener atau tambahin record yang kurang.
-•	Perbarui Nameserver: 
+• Perbarui Nameserver:
 Cloudflare bakal kasih dua nameserver. Ganti nameserver domain kamu di registrar (contohnya, Hostinger) dengan nameserver dari Cloudflare.
-•	Verifikasi: 
+• Verifikasi:
 Setelah nameserver diganti, balik lagi ke Cloudflare dan klik "Done, check nameservers". Tunggu beberapa menit sampai Cloudflare selesai verifikasi.
 
 ### 3.2 Menyiapkan Domain di Hostinger
+
 Cara Membeli dan Mengkonfigurasi Domain di Hostinger untuk Website
 
-•	Buka Website Hostinger: 
+• Buka Website Hostinger:
 Kunjungi www.hostinger.com.
-•	Daftar atau Masuk: 
+• Daftar atau Masuk:
 Klik "Sign Up" buat daftar akun baru atau "Log In" kalau udah punya akun.
-•	Cari Domain: 
+• Cari Domain:
 Gunakan fitur pencarian domain buat nyari domain yang kamu mau. Masukkan nama domain dan klik "Search".
-•	Pilih Domain: 
+• Pilih Domain:
 Kalau domainnya tersedia, klik "Add to cart" dan lanjutkan ke proses pembayaran.
-•	Beli Domain: 
+• Beli Domain:
 Ikuti proses checkout dan selesaikan pembayaran buat domain yang kamu pilih.
-•	Konfigurasi DNS: 
+• Konfigurasi DNS:
 Setelah pembelian selesai, masuk ke dashboard Hostinger, pilih "Domains", dan klik domain yang baru kamu beli. Arahkan ke bagian DNS buat mengkonfigurasi nameserver atau record DNS yang diperlukan.
+
 ### 3.3 Menyiapkan Akun GCP (Google Cloud Platform)
+
 Panduan untuk Membuat Akun GCP dan Menyiapkan Proyek untuk Hosting
-•	Buka Google Cloud Platform:
+• Buka Google Cloud Platform:
 Kunjungi cloud.google.com.
-•	Daftar atau Masuk: 
+• Daftar atau Masuk:
 Klik "Get Started for Free" buat daftar akun baru atau "Sign In" kalau udah punya akun.
-•	Konfirmasi Detail: 
+• Konfirmasi Detail:
 Ikuti langkah-langkah buat konfirmasi detail akun kamu, termasuk verifikasi identitas dan metode pembayaran.
-•	Buat Proyek Baru: 
+• Buat Proyek Baru:
 Setelah masuk, buka menu drop-down di bagian atas dan pilih "New Project".
-•	Isi Detail Proyek: 
+• Isi Detail Proyek:
 Kasih nama proyek kamu dan pilih lokasi yang sesuai. Klik "Create".
-•	Aktifkan API yang Dibutuhkan: 
+• Aktifkan API yang Dibutuhkan:
 Masuk ke API & Services > Dashboard, klik "Enable APIs and Services" dan aktifkan API yang dibutuhin buat proyek kamu.
 
 ### 3.4 Deployment Aplikasi ke GCP
+
 Langkah-langkah untuk Mendepoy Aplikasi Anda ke Google Cloud Platform
 
-•	Instal Google Cloud SDK: 
+• Instal Google Cloud SDK:
 Download dan instal Google Cloud SDK dari cloud.google.com/sdk.
-•	Inisialisasi SDK: 
+• Inisialisasi SDK:
 Buka terminal atau command prompt, jalankan gcloud init dan ikuti petunjuk buat hubungin SDK dengan akun GCP kamu. Ini termasuk login ke akun Google dan milih proyek yang udah kamu buat.
-•	Siapkan Aplikasi: 
+• Siapkan Aplikasi:
 Di root directory aplikasi kamu, pastiin semua file aplikasi udah siap. Misalnya, kalau kamu pake bahasa pemrograman tertentu, pastiin semua dependency udah terinstal dan file konfigurasi udah siap.
-•	Buat File Konfigurasi Deployment:
+• Buat File Konfigurasi Deployment:
 Buat file app.yaml di root directory aplikasi kamu. Isi file ini dengan konfigurasi yang dibutuhkan buat deployment. Contohnya, kalau kamu pake Golang, file app.yaml bisa kayak gini:
-// gambar 
+// gambar
 yaml
 Salin kode
 runtime: go
 env: standard
 
-•	Deploy Aplikasi: 
+• Deploy Aplikasi:
 Jalankan perintah gcloud app deploy di terminal atau command prompt. Proses ini bakal nge-upload aplikasi kamu ke Google App Engine dan mulai deployment. Tunggu sampai proses selesai.
-•	Verifikasi Deployment: 
+• Verifikasi Deployment:
 Setelah deployment selesai, kamu bisa cek aplikasi kamu dengan ngeakses URL yang diberikan oleh GCP. Biasanya URL ini punya format https://[YOUR_PROJECT_ID].appspot.com.
+
 ### 3.5 Menghubungkan Domain dengan Cloudflare dan GCP
+
 Panduan untuk Menghubungkan Domain di Hostinger dengan Layanan Cloudflare dan GCP untuk Hosting Website
 
-•	Masuk ke Akun Hostinger: 
+• Masuk ke Akun Hostinger:
 Buka www.hostinger.com dan masuk ke akun kamu. Pilih domain yang udah kamu beli.
 
-•	Konfigurasi DNS di Hostinger: 
+• Konfigurasi DNS di Hostinger:
 Di dashboard Hostinger, pilih "Domains" dan klik domain yang mau kamu konfigurasi. Pilih "DNS Zone" dan tambahkan record DNS baru. Kamu perlu bikin A record dan CNAME record untuk mengarahkan domain kamu ke IP address server di GCP.
-        //gambar
+//gambar
 A Record:
 Name: @
 IP Address: IP address server GCP kamu.
 CNAME Record:
 Name: www
 Alias: @
-•	Tambahkan Domain di Cloudflare: 
+• Tambahkan Domain di Cloudflare:
 Masuk ke akun Cloudflare dan tambahkan domain kamu (langkah ini sama seperti yang udah dijelasin di bagian sebelumnya). Pastikan DNS records yang kamu tambahkan di Hostinger juga ada di sini.
-•	Perbarui Nameserver: 
+• Perbarui Nameserver:
 Di Hostinger, masuk ke pengaturan domain dan ganti nameserver dengan nameserver yang diberikan oleh Cloudflare. Biasanya ada dua nameserver yang harus diganti.
-•	Konfigurasi DNS di Cloudflare: 
+• Konfigurasi DNS di Cloudflare:
 Di dashboard Cloudflare, pilih domain kamu dan masuk ke tab "DNS". Tambahkan atau edit DNS records untuk mengarahkan domain ke IP address server di GCP. Kamu bisa pake A record atau CNAME record seperti yang udah dijelasin di langkah sebelumnya.
-•	Verifikasi dan Finalisasi: 
+• Verifikasi dan Finalisasi:
 Setelah semua konfigurasi selesai, balik ke dashboard Cloudflare dan klik "Check Nameservers" untuk verifikasi. Tunggu beberapa menit sampai Cloudflare selesai verifikasi. Setelah itu, domain kamu bakal terhubung ke server di GCP dan siap diakses.
-
-
-
 
 ### MEMBUAT AKUN MONGODB
 
